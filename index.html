@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form">
+        <form action="success.html" name="validate" method="post" onsubmit="return validateform()">
+          <fieldset>
+            <legend>Basic Information</legend>
+            First Name : <input type="name" name="fname" placeholder="Enter Your FirstName"><br>
+            Last Name : <input type="name" name="lname" placeholder="Enter Your LastName"><br>
+            City Name: <input type="text" name="city" placeholder="Enter Your City"><br>
+            Phone No : <input type="number" name="number" placeholder="Enter Your Phone number"><br>
+            Address : <input type="text" name="address" style="padding: 20px;" placeholder="Enter Your Address"><br>
+            <button type="submit" value="submit">Submit</button>
+          </fieldset>
+        </form>
+    </div>
+    <script>
+        function validateform(){
+    var fname=document.validate.fname.value;
+    var lname=document.validate.lname.value;
+    var city=document.validate.city.value;
+    var number=document.validate.number.value;
+    var address=document.validate.address.value;
+    if(fname == null ||fname == "" ){
+        alert("First Name should not be blank");
+        return false;
+    }
+    else if(lname == null ||lname == "" ){
+        alert("Last Name should not be blank");
+        return false;
+    }
+    else if(city == null ||city == "" ){
+        alert("City should not to be blank");
+        return false;
+    }
+    else if(number.length<10 ){
+        alert("Phone Number should contain 10 numbers");
+        return false;
+    }
+    else if(address == null || address == ""){
+        alert("Please enter Address");
+        return false;
+    }
+        }
+
+    </script>
+    
+</body>
+</html>
